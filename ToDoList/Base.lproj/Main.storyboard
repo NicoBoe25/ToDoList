@@ -22,6 +22,9 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <action selector="dismissKeyboard:" destination="2Wy-ew-OLH" eventType="editingDidEnd" id="Uj5-mY-abN"/>
+                            </connections>
                         </textField>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="taskID" id="atH-YD-CJq" customClass="CellTableViewCell" customModule="ToDoList" customModuleProvider="target">
@@ -53,8 +56,6 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="TO DO" id="LjZ-bh-XEv"/>
                     <connections>
-                        <outlet property="cellImageView" destination="F6C-DX-mQg" id="T5h-Zg-Hno"/>
-                        <outlet property="cellLabel" destination="tl0-NX-SKD" id="ykx-rI-NwM"/>
                         <outlet property="newTaskTextField" destination="a87-gQ-urP" id="0z3-P0-eHO"/>
                         <outlet property="todoTableView" destination="8BW-49-V6B" id="q7i-jv-2ck"/>
                     </connections>

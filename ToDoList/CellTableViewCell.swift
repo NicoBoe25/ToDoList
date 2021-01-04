@@ -14,7 +14,9 @@ class CellTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
+    @IBOutlet weak var cellImageView: UIImageView!
+    @IBOutlet weak var cellLabel: UILabel!
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

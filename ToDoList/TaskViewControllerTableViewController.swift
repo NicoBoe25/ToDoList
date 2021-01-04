@@ -20,6 +20,14 @@ class TaskViewControllerTableViewController: UITableViewController {
 
     @IBOutlet weak var newTaskTextField: UITextField!
     
+    @IBAction func dismissKeyboard(_ sender: Any) {
+        if newTaskTextField.hasText {
+            let newNameTask = newTaskTextField.text!
+            tabTask.append(newNameTask)
+        }
+        newTaskTextField.resignFirstResponder()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
