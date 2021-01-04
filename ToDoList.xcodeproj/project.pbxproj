@@ -18,6 +18,7 @@
 		CCCB307025A317400018B499 /* TaskViewControllerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCB306F25A317400018B499 /* TaskViewControllerTableViewController.swift */; };
 		CCCB307B25A322D80018B499 /* CellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCB307A25A322D80018B499 /* CellTableViewCell.swift */; };
 		DD23EF1E25A317130061AD49 /* ToDo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD23EF1D25A317130061AD49 /* ToDo.swift */; };
+		DD23EF2625A3220B0061AD49 /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD23EF2525A3220B0061AD49 /* TaskViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		CCCB306F25A317400018B499 /* TaskViewControllerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewControllerTableViewController.swift; sourceTree = "<group>"; };
 		CCCB307A25A322D80018B499 /* CellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellTableViewCell.swift; sourceTree = "<group>"; };
 		DD23EF1D25A317130061AD49 /* ToDo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDo.swift; sourceTree = "<group>"; };
+		DD23EF2525A3220B0061AD49 /* TaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 				CC74DE73253DC19300546398 /* ViewController.swift */,
 				CCCB306F25A317400018B499 /* TaskViewControllerTableViewController.swift */,
 				CC74DE75253DC19300546398 /* Main.storyboard */,
+				DD23EF2525A3220B0061AD49 /* TaskViewController.swift */,
 				DD23EF1D25A317130061AD49 /* ToDo.swift */,
 				CC74DE78253DC19400546398 /* Assets.xcassets */,
 				CC74DE7A253DC19400546398 /* LaunchScreen.storyboard */,
@@ -274,6 +277,7 @@
 				CCCB307B25A322D80018B499 /* CellTableViewCell.swift in Sources */,
 				CCCB307025A317400018B499 /* TaskViewControllerTableViewController.swift in Sources */,
 				DD23EF1E25A317130061AD49 /* ToDo.swift in Sources */,
+				DD23EF2625A3220B0061AD49 /* TaskViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
