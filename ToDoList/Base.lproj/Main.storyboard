@@ -11,7 +11,7 @@
         <!--TO DO-->
         <scene sceneID="hrl-Wr-Jt8">
             <objects>
-                <tableViewController id="2Wy-ew-OLH" customClass="TaskViewControllerTableViewController" customModule="ToDoList" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="taskID" id="2Wy-ew-OLH" customClass="TaskViewControllerTableViewController" customModule="ToDoList" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="8BW-49-V6B">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -23,7 +23,7 @@
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="atH-YD-CJq">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="taskID" id="atH-YD-CJq" customClass="CellTableViewCell" customModule="ToDoList" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="62" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="atH-YD-CJq" id="w4i-fA-gP6">
@@ -52,7 +52,10 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="TO DO" id="LjZ-bh-XEv"/>
                     <connections>
+                        <outlet property="cellImageView" destination="F6C-DX-mQg" id="T5h-Zg-Hno"/>
+                        <outlet property="cellLabel" destination="tl0-NX-SKD" id="ykx-rI-NwM"/>
                         <outlet property="newTaskTextField" destination="a87-gQ-urP" id="0z3-P0-eHO"/>
+                        <outlet property="todoTableView" destination="8BW-49-V6B" id="q7i-jv-2ck"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HHF-1P-YQp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

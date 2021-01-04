@@ -11,11 +11,13 @@ import UIKit
 class TaskViewControllerTableViewController: UITableViewController {
 
     
+    @IBOutlet var todoTableView: UITableView!
     var tabTask = [
         "test1",
         "test2",
         "test3"
     ]
+
     @IBOutlet weak var newTaskTextField: UITextField!
     
     override func viewDidLoad() {
@@ -28,6 +30,9 @@ class TaskViewControllerTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        todoTableView.delegate = self
+        todoTableView.dataSource = self
     }
 
     // MARK: - Table view data source
@@ -44,11 +49,11 @@ class TaskViewControllerTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "taskID", for: indexPath)
         
         let task = tabTask[indexPath.row]
         
-        cell.textLabel?.text = task
+//        cell.cellLabel?.text = task
                 
         return cell
     }

@@ -16,6 +16,7 @@
 		CC74DE87253DC19400546398 /* ToDoListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC74DE86253DC19400546398 /* ToDoListTests.swift */; };
 		CC74DE92253DC19400546398 /* ToDoListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC74DE91253DC19400546398 /* ToDoListUITests.swift */; };
 		CCCB307025A317400018B499 /* TaskViewControllerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCB306F25A317400018B499 /* TaskViewControllerTableViewController.swift */; };
+		CCCB307B25A322D80018B499 /* CellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCB307A25A322D80018B499 /* CellTableViewCell.swift */; };
 		DD23EF1E25A317130061AD49 /* ToDo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD23EF1D25A317130061AD49 /* ToDo.swift */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +53,7 @@
 		CC74DE91253DC19400546398 /* ToDoListUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListUITests.swift; sourceTree = "<group>"; };
 		CC74DE93253DC19400546398 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CCCB306F25A317400018B499 /* TaskViewControllerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewControllerTableViewController.swift; sourceTree = "<group>"; };
+		CCCB307A25A322D80018B499 /* CellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellTableViewCell.swift; sourceTree = "<group>"; };
 		DD23EF1D25A317130061AD49 /* ToDo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -103,6 +105,7 @@
 		CC74DE6E253DC19300546398 /* ToDoList */ = {
 			isa = PBXGroup;
 			children = (
+				CCCB307A25A322D80018B499 /* CellTableViewCell.swift */,
 				CC74DE6F253DC19300546398 /* AppDelegate.swift */,
 				CC74DE71253DC19300546398 /* SceneDelegate.swift */,
 				CC74DE73253DC19300546398 /* ViewController.swift */,
@@ -268,6 +271,7 @@
 				CC74DE74253DC19300546398 /* ViewController.swift in Sources */,
 				CC74DE70253DC19300546398 /* AppDelegate.swift in Sources */,
 				CC74DE72253DC19300546398 /* SceneDelegate.swift in Sources */,
+				CCCB307B25A322D80018B499 /* CellTableViewCell.swift in Sources */,
 				CCCB307025A317400018B499 /* TaskViewControllerTableViewController.swift in Sources */,
 				DD23EF1E25A317130061AD49 /* ToDo.swift in Sources */,
 			);
