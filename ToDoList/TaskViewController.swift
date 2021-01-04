@@ -10,6 +10,11 @@ import UIKit
 
 class TaskViewController: UIViewController {
 
+    @IBOutlet weak var titleInput: UITextField!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var imagImageView: UIImageView!
+    @IBOutlet weak var locationSwitch: UISwitch!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
