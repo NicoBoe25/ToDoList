@@ -47,6 +47,10 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="cellImageView" destination="F6C-DX-mQg" id="1MW-uW-YQW"/>
+                                    <outlet property="cellLabel" destination="tl0-NX-SKD" id="0u4-TW-UaN"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

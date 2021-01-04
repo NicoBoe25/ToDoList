@@ -57,12 +57,18 @@ class TaskViewControllerTableViewController: UITableViewController {
         
         let task = tabTask[indexPath.row]
         
-//        cell.cellLabel?.text = task
+//        cell.cellLabel.text = task
                 
         return cell
     }
-    
-
+    //todo : methode en dessous
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        let cell = tableView.cellForRow(at: IndexPath) as! ToDo
+//
+//        if cell.isChecked == false {
+//            cell.checkmarkImage =
+//        }
+//    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
