@@ -10,9 +10,19 @@ import UIKit
 
 class TaskViewControllerTableViewController: UITableViewController {
 
+    
+    var tabTask = [
+        "test1",
+        "test2",
+        "test3"
+    ]
+    @IBOutlet weak var newTaskTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -29,18 +39,20 @@ class TaskViewControllerTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return tabTask.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        
+        let task = tabTask[indexPath.row]
+        
+        cell.textLabel?.text = task
+                
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
