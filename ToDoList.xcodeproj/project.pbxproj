@@ -15,6 +15,7 @@
 		CC74DE7C253DC19400546398 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC74DE7A253DC19400546398 /* LaunchScreen.storyboard */; };
 		CC74DE87253DC19400546398 /* ToDoListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC74DE86253DC19400546398 /* ToDoListTests.swift */; };
 		CC74DE92253DC19400546398 /* ToDoListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC74DE91253DC19400546398 /* ToDoListUITests.swift */; };
+		CCCB307025A317400018B499 /* TaskViewControllerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCB306F25A317400018B499 /* TaskViewControllerTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		CC74DE8D253DC19400546398 /* ToDoListUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ToDoListUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC74DE91253DC19400546398 /* ToDoListUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListUITests.swift; sourceTree = "<group>"; };
 		CC74DE93253DC19400546398 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CCCB306F25A317400018B499 /* TaskViewControllerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewControllerTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				CC74DE6F253DC19300546398 /* AppDelegate.swift */,
 				CC74DE71253DC19300546398 /* SceneDelegate.swift */,
 				CC74DE73253DC19300546398 /* ViewController.swift */,
+				CCCB306F25A317400018B499 /* TaskViewControllerTableViewController.swift */,
 				CC74DE75253DC19300546398 /* Main.storyboard */,
 				CC74DE78253DC19400546398 /* Assets.xcassets */,
 				CC74DE7A253DC19400546398 /* LaunchScreen.storyboard */,
@@ -262,6 +265,7 @@
 				CC74DE74253DC19300546398 /* ViewController.swift in Sources */,
 				CC74DE70253DC19300546398 /* AppDelegate.swift in Sources */,
 				CC74DE72253DC19300546398 /* SceneDelegate.swift in Sources */,
+				CCCB307025A317400018B499 /* TaskViewControllerTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
