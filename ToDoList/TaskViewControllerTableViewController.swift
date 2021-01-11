@@ -17,13 +17,13 @@ class TaskViewControllerTableViewController: UITableViewController, UITextFieldD
     @IBOutlet weak var newTaskTextField: UITextField!
     
     @IBAction func dismissKeyboard(_ sender: Any) {
-        newTaskTextField.text="hello"
-//        if newTaskTextField.hasText {
-//            let newNameTask = newTaskTextField.text!
-//            tabTask.append(ToDo(title: newNameTask, state: false))
-//            todoTableView.reloadData();
-//        }
-//        newTaskTextField.text=nil
+        if newTaskTextField.hasText {
+            let newNameTask = newTaskTextField.text!
+            tabTask.append(ToDo(title: newNameTask, state: false))
+            todoTableView.reloadData();
+        }
+        newTaskTextField.resignFirstResponder()
+        newTaskTextField.text=nil
     }
     
    
@@ -81,17 +81,24 @@ class TaskViewControllerTableViewController: UITableViewController, UITextFieldD
     }
     */
 
-    /*
+    
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
+        if editingStyle == .delete{
             // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+            let cell = tableView.cellForRow(at: indexPath) as! CellTableViewCell
+            if cell.isChecked{
+                tabTask.remove(at: indexPath.row)
+                tableView.deleteRows(at: [indexPath], with: .fade)
+            }else{
+                let alert = UIAlertController(title: "ToDo", message: "Task is not checked", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: nil))
+                present(alert, animated: true, completion: nil)
+            }
+            
+        }
     }
-    */
+    
 
     /*
     // Override to support rearranging the table view.
