@@ -21,12 +21,10 @@ class TaskViewControllerTableViewController: UITableViewController, UITextFieldD
             let newNameTask = newTaskTextField.text!
             tabTask.append(ToDo(title: newNameTask, state: false))
             todoTableView.reloadData();
-            print("out")
         }else{
             let alert = UIAlertController(title: "ToDo", message: "Task is empty", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: nil))
             present(alert, animated: true, completion: nil)
-            print("out")
         }
         newTaskTextField.resignFirstResponder()
         newTaskTextField.text=nil
