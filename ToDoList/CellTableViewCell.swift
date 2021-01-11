@@ -9,7 +9,7 @@
 import UIKit
 
 class CellTableViewCell: UITableViewCell {
-
+    var isChecked=false
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TaskViewControllerTableViewController: UITableViewController {
+class TaskViewControllerTableViewController: UITableViewController, UITextFieldDelegate {
 
     
     @IBOutlet var todoTableView: UITableView!
@@ -17,18 +17,19 @@ class TaskViewControllerTableViewController: UITableViewController {
     @IBOutlet weak var newTaskTextField: UITextField!
     
     @IBAction func dismissKeyboard(_ sender: Any) {
-        if newTaskTextField.hasText {
-            let newNameTask = newTaskTextField.text!
-            tabTask.append(ToDo(title: newNameTask, state: false));
-        }
-        newTaskTextField.resignFirstResponder()
+        newTaskTextField.text="hello"
+//        if newTaskTextField.hasText {
+//            let newNameTask = newTaskTextField.text!
+//            tabTask.append(ToDo(title: newNameTask, state: false))
+//            todoTableView.reloadData();
+//        }
+//        newTaskTextField.text=nil
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
-        
+        newTaskTextField.delegate = self
+    
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -53,22 +54,23 @@ class TaskViewControllerTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "taskID", for: indexPath)
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "taskID", for: indexPath) as! CellTableViewCell
         let task = tabTask[indexPath.row]
-        
-//        cell.cellLabel.text = task
-                
+        cell.cellLabel.text=task.title
+        cell.cellImageView.image=task.photo;
         return cell
     }
     //todo : methode en dessous
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let cell = tableView.cellForRow(at: IndexPath) as! ToDo
-//
-//        if cell.isChecked == false {
-//            cell.checkmarkImage =
-//        }
-//    }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath) as! CellTableViewCell
+        if !cell.isChecked {
+            cell.cellImageView.image=UIImage(named: "checked.png");
+            cell.isChecked=true
+        }else{
+            cell.cellImageView.image=nil
+            cell.isChecked=false
+        }
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
