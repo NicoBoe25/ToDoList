@@ -17,13 +17,19 @@ class TaskViewControllerTableViewController: UITableViewController, UITextFieldD
     @IBOutlet weak var newTaskTextField: UITextField!
     
     @IBAction func dismissKeyboard(_ sender: Any) {
-        newTaskTextField.text="hello"
-//        if newTaskTextField.hasText {
-//            let newNameTask = newTaskTextField.text!
-//            tabTask.append(ToDo(title: newNameTask, state: false))
-//            todoTableView.reloadData();
-//        }
-//        newTaskTextField.text=nil
+        if newTaskTextField.hasText {
+            let newNameTask = newTaskTextField.text!
+            tabTask.append(ToDo(title: newNameTask, state: false))
+            todoTableView.reloadData();
+            print("out")
+        }else{
+            let alert = UIAlertController(title: "ToDo", message: "Task is empty", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: nil))
+            present(alert, animated: true, completion: nil)
+            print("out")
+        }
+        newTaskTextField.resignFirstResponder()
+        newTaskTextField.text=nil
     }
     
     override func viewDidLoad() {

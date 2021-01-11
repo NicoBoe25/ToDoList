@@ -23,7 +23,7 @@
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                             <connections>
-                                <action selector="dismissKeyboard:" destination="2Wy-ew-OLH" eventType="editingDidEnd" id="Uj5-mY-abN"/>
+                                <action selector="dismissKeyboard:" destination="2Wy-ew-OLH" eventType="primaryActionTriggered" id="YqD-Og-7gl"/>
                             </connections>
                         </textField>
                         <prototypes>
