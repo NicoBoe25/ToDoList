@@ -12,18 +12,14 @@ class TaskViewControllerTableViewController: UITableViewController {
 
     
     @IBOutlet var todoTableView: UITableView!
-    var tabTask = [
-        "test1",
-        "test2",
-        "test3"
-    ]
+    var tabTask = ToDo.loadSampleToDos();
 
     @IBOutlet weak var newTaskTextField: UITextField!
     
     @IBAction func dismissKeyboard(_ sender: Any) {
         if newTaskTextField.hasText {
             let newNameTask = newTaskTextField.text!
-            tabTask.append(newNameTask)
+            tabTask.append(ToDo(title: newNameTask, state: false));
         }
         newTaskTextField.resignFirstResponder()
     }
