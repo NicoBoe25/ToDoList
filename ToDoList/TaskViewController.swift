@@ -15,6 +15,9 @@ class TaskViewController: UIViewController {
     @IBOutlet weak var imagImageView: UIImageView!
     @IBOutlet weak var locationSwitch: UISwitch!
     
+    @IBOutlet weak var CancelButton: UIBarButtonItem!
+    @IBOutlet weak var SaveButton: UIBarButtonItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

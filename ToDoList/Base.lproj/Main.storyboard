@@ -150,12 +150,24 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Wz-S5-O3x">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="To Do Details" leftItemsSupplementBackButton="YES" id="VXS-v3-jDG">
+                                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="fUt-vQ-rHr"/>
+                                        <barButtonItem key="rightBarButtonItem" title="Save" id="Kry-IR-dkd"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="uTW-Ar-9WS"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
+                        <outlet property="CancelButton" destination="fUt-vQ-rHr" id="l9M-QB-tpQ"/>
                         <outlet property="LocationMapKit" destination="zK0-3m-hQd" id="dCj-ed-vt8"/>
+                        <outlet property="SaveButton" destination="Kry-IR-dkd" id="PRQ-2W-Fam"/>
                         <outlet property="dateLabel" destination="FTy-04-QDb" id="x6B-yG-GRm"/>
                         <outlet property="imagImageView" destination="lRt-lP-W0k" id="IBG-yl-UBv"/>
                         <outlet property="locationSwitch" destination="eGb-fw-whm" id="LAg-fF-SJo"/>
