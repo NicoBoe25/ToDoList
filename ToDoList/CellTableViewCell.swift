@@ -9,19 +9,20 @@
 import UIKit
 
 class CellTableViewCell: UITableViewCell {
-    var isChecked=false
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-    @IBOutlet weak var cellImageView: UIImageView!
+    
+    var toDo: ToDo!
+       
     @IBOutlet weak var cellLabel: UILabel!
+    @IBOutlet weak var cellButton: UIButton!
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
     }
-    // Todo : ischeck + checkmark
 
 }

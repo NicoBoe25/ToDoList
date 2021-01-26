@@ -20,7 +20,7 @@ class ToDo: NSObject {
     
     static func loadSampleToDos() -> Array<ToDo>{
         let todo1:ToDo = ToDo(title: "courses", state: false);
-        let todo2:ToDo = ToDo(title: "répondre à Nicolas", state: true);
+        let todo2:ToDo = ToDo(title: "répondre à Nicolas", state: false);
         let todo3:ToDo = ToDo(title: "Réparer la roue", state: false);
         
         return [todo1, todo2, todo3];

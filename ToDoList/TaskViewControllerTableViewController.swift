@@ -33,7 +33,7 @@ class TaskViewControllerTableViewController: UITableViewController, UITextFieldD
     override func viewDidLoad() {
         super.viewDidLoad()
         newTaskTextField.delegate = self
-    
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -60,21 +60,18 @@ class TaskViewControllerTableViewController: UITableViewController, UITextFieldD
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "taskID", for: indexPath) as! CellTableViewCell
         let task = tabTask[indexPath.row]
+        cell.toDo = task
         cell.cellLabel.text=task.title
-        cell.cellImageView.image=task.photo;
+        cell.cellButton.addTarget(self, action: #selector(buttonTapped) , for: .touchUpInside)
         return cell
     }
-    //todo : methode en dessous
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cell = tableView.cellForRow(at: indexPath) as! CellTableViewCell
-        if !cell.isChecked {
-            cell.cellImageView.image=UIImage(named: "checked.png");
-            cell.isChecked=true
-        }else{
-            cell.cellImageView.image=nil
-            cell.isChecked=false
-        }
+    
+    @objc func buttonTapped(_ sender: UIButton) {
+        let cell = sender.superview!.superview! as! CellTableViewCell
+        cell.toDo.state = !cell.toDo.state
+        sender.isSelected = !sender.isSelected
     }
+    
     
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -89,7 +86,7 @@ class TaskViewControllerTableViewController: UITableViewController, UITextFieldD
         if editingStyle == .delete{
             // Delete the row from the data source
             let cell = tableView.cellForRow(at: indexPath) as! CellTableViewCell
-            if cell.isChecked{
+            if cell.toDo.state{
                 tabTask.remove(at: indexPath.row)
                 tableView.deleteRows(at: [indexPath], with: .fade)
             }else{
