@@ -9,6 +9,8 @@
 import UIKit
 
 class TaskViewController: UIViewController {
+    
+    var task: ToDo?
 
     @IBOutlet weak var titleInput: UITextField!
     @IBOutlet weak var dateLabel: UILabel!
@@ -22,6 +24,11 @@ class TaskViewController: UIViewController {
         super.viewDidLoad()
         
 
+        if let task = task{
+            titleInput.text = task.title
+//            dateLabel.text = task.lastDate
+            imagImageView.image=task.photo
+        }
         // Do any additional setup after loading the view.
     }
     

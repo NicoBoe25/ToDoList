@@ -52,6 +52,7 @@
                                 <connections>
                                     <outlet property="cellButton" destination="tDA-bp-hKG" id="cZm-sn-QLL"/>
                                     <outlet property="cellLabel" destination="tl0-NX-SKD" id="0u4-TW-UaN"/>
+                                    <segue destination="Lpf-ef-nn2" kind="show" id="LAF-8i-bpO"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -89,7 +90,7 @@
         <!--Task View Controller-->
         <scene sceneID="cZK-gQ-xIV">
             <objects>
-                <viewController id="ZBn-lg-EHb" customClass="TaskViewController" sceneMemberID="viewController">
+                <viewController id="ZBn-lg-EHb" customClass="TaskViewController" customModule="ToDoList" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="61r-uG-fAm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -125,10 +126,6 @@
                                 <rect key="frame" x="347" y="475" width="49" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </switch>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="zK0-3m-hQd">
-                                <rect key="frame" x="20" y="533" width="374" height="329"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </mapView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lRt-lP-W0k">
                                 <rect key="frame" x="229" y="302" width="165" height="151"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -166,9 +163,11 @@
                         <viewLayoutGuide key="safeArea" id="uTW-Ar-9WS"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="NUn-Ve-evR">
+                        <barButtonItem key="backBarButtonItem" title="Cancel" id="c0X-Tv-bKM"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="CancelButton" destination="fUt-vQ-rHr" id="l9M-QB-tpQ"/>
-                        <outlet property="LocationMapKit" destination="zK0-3m-hQd" id="dCj-ed-vt8"/>
                         <outlet property="SaveButton" destination="Kry-IR-dkd" id="PRQ-2W-Fam"/>
                         <outlet property="dateLabel" destination="FTy-04-QDb" id="x6B-yG-GRm"/>
                         <outlet property="imagImageView" destination="lRt-lP-W0k" id="IBG-yl-UBv"/>
@@ -178,7 +177,26 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o3X-OV-IGa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1640.5797101449277" y="-28.125"/>
+            <point key="canvasLocation" x="2392.753623188406" y="-28.125"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="EIY-SZ-3o5">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Lpf-ef-nn2" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="vh5-XZ-sIM"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="SWE-LV-IL3">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ZBn-lg-EHb" kind="relationship" relationship="rootViewController" id="zEU-bg-woD"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iCv-BT-FbF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1482.608695652174" y="-28.125"/>
         </scene>
     </scenes>
     <resources>
