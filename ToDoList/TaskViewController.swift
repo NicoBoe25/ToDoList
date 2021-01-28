@@ -7,22 +7,33 @@
 //
 
 import UIKit
+import CoreLocation
+import MapKit
 
-class TaskViewController: UIViewController {
+class TaskViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     
     var task: ToDo?
-
+    let locationManager = CLLocationManager()
+    var tempLocation: CLLocation?
     @IBOutlet weak var titleInput: UITextField!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var imagImageView: UIImageView!
     @IBOutlet weak var locationSwitch: UISwitch!
-    
+    @IBOutlet weak var map: MKMapView!
     @IBOutlet weak var cancelButton: UIBarButtonItem!
     @IBOutlet weak var saveButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         saveButton.isEnabled = false
+        
+        locationManager.requestAlwaysAuthorization()
+        locationManager.requestWhenInUseAuthorization()
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.startUpdatingLocation()
+        }
 
         if let task = task{
             titleInput.text = task.title
@@ -31,6 +42,16 @@ class TaskViewController: UIViewController {
             dateLabel.text = formatter3.string(from: task.updateDate!)
             imagImageView.image=task.photo
             locationSwitch.setOn(task.locationEnabled, animated: true)
+            if task.locationEnabled {
+                let center = CLLocationCoordinate2D(latitude: task.local!.coordinate.latitude, longitude: task.local!.coordinate.longitude)
+                let mRegion = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1))
+                map.setRegion(mRegion, animated: true)
+                
+                let mkAnnotation: MKPointAnnotation = MKPointAnnotation()
+                mkAnnotation.coordinate = CLLocationCoordinate2DMake(task.local!.coordinate.latitude, task.local!.coordinate.longitude)
+                mkAnnotation.title = task.title
+                map.addAnnotation(mkAnnotation)
+            }
         }
         // Do any additional setup after loading the view.
     }
@@ -47,6 +68,15 @@ class TaskViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let locValue: CLLocation = manager.location else { return }
+        if let task = task {
+            if task.locationEnabled {
+                tempLocation = locValue
+            }
+        }
+            
+    }
     
     
 
@@ -60,15 +90,10 @@ class TaskViewController: UIViewController {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
         if saveButton.isEnabled {
-                   let title = titleInput.text!
-                   
-                   //let local = currentUserLocation
-                   
-                   //let photo = imageView.image
-                   
-            task = ToDo(title: title, state: false, updateDate: Date()/*, local: local ?? CLLocation(latitude: 47.6, longitude: 6.8), photo: photo*/ )
-               }
+            let title = titleInput.text!
+            //let local = currentUserLocation
+            //let photo = imageView.image
+            task = ToDo(title: title, state: false, updateDate: Date(), locationEnabled: locationSwitch.isOn, local:tempLocation)
+        }
     }
-    
-
 }
