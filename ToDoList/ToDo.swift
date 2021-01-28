@@ -7,26 +7,35 @@
 //
 
 import UIKit
+import CoreLocation
+
 
 class ToDo: NSObject {
     var title: String
     var state: Bool
     var photo: UIImage?
     var updateDate: Date?
+    var locationEnabled: Bool
+    var local: CLLocation?
     
-    init(title:String, state:Bool, updateDate: Date?, photo: UIImage?) {
+    init(title:String, state:Bool, updateDate: Date?, locationEnabled: Bool?, local: CLLocation?) {
         self.title = title;
         self.state = state;
         if let updateDate = updateDate{
             self.updateDate = updateDate
         }
-        self.photo=photo
+        if let locationEnabled = locationEnabled {
+            self.locationEnabled = locationEnabled
+        }else { self.locationEnabled = false }
+        if let local = local {
+            self.local = local
+        }else { self.local = nil }
     }
     
     static func loadSampleToDos() -> Array<ToDo>{
-        let todo1:ToDo = ToDo(title: "courses", state: false, updateDate: Date(), photo: nil);
-        let todo2:ToDo = ToDo(title: "répondre à Nicolas", state: false, updateDate: Date(), photo: nil);
-        let todo3:ToDo = ToDo(title: "Réparer la roue", state: false, updateDate: Date(), photo: nil);
+        let todo1:ToDo = ToDo(title: "courses", state: false, updateDate: Date(), locationEnabled: true, local: CLLocation(latitude: 47.642820, longitude: 6.839489));
+        let todo2:ToDo = ToDo(title: "répondre à Nicolas", state: false, updateDate: Date(), locationEnabled: false, local: CLLocation(latitude: 47.5, longitude: 6.7680));
+        let todo3:ToDo = ToDo(title: "Réparer la roue", state: false, updateDate: Date(), locationEnabled: nil, local: CLLocation(latitude: 64.133964, longitude: -21.925700));
         return [todo1, todo2, todo3];
     }
     
