@@ -19,7 +19,7 @@ class TaskViewControllerTableViewController: UITableViewController, UITextFieldD
     @IBAction func dismissKeyboard(_ sender: Any) {
         if newTaskTextField.hasText {
             let newNameTask = newTaskTextField.text!
-            tabTask.append(ToDo(title: newNameTask, state: false, updateDate: nil, locationEnabled: false, local: nil, photo:nil))
+            tabTask.append(ToDo(title: newNameTask, state: false, updateDate: Date(), locationEnabled: false, local: nil, photo: nil))
             todoTableView.reloadData();
         }else{
             let alert = UIAlertController(title: "ToDo", message: "Task is empty", preferredStyle: .alert)
@@ -114,7 +114,6 @@ class TaskViewControllerTableViewController: UITableViewController, UITextFieldD
     }
     */
     @IBAction func unwindToNoteTableView(segue: UIStoryboardSegue) {
-             //KarenUnwind == Save
                  let sourceViewController = segue.source as! TaskViewController
                  if let todo = sourceViewController.task {
                      if let selectedIndexPath = tableView.indexPathForSelectedRow {
