@@ -59,13 +59,13 @@ class TaskViewController: UIViewController {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
         if saveButton.isEnabled {
-                   let title = titleInput.text ?? ""
+                   let title = titleInput.text!
                    
                    //let local = currentUserLocation
                    
                    //let photo = imageView.image
                    
-            var todo = ToDo(title: title, state: false, date: Date()/*, local: local ?? CLLocation(latitude: 47.6, longitude: 6.8), photo: photo*/ )
+            task = ToDo(title: title, state: false, updateDate: Date()/*, local: local ?? CLLocation(latitude: 47.6, longitude: 6.8), photo: photo*/ )
                }
     }
     
