@@ -10,8 +10,7 @@ import UIKit
 import CoreLocation
 import MapKit
 
-class TaskViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
-class TaskViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+class TaskViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, CLLocationManagerDelegate, MKMapViewDelegate{
     
     var task: ToDo?
     let locationManager = CLLocationManager()
@@ -39,7 +38,7 @@ class TaskViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         if let task = task{
             titleInput.text = task.title
             let formatter3 = DateFormatter()
-            formatter3.dateFormat = "dd/MM/yyyy, H:m"
+            formatter3.dateFormat = "dd/MM/yyyy, HH:mm"
             dateLabel.text = formatter3.string(from: task.updateDate!)
             imagImageView.image=task.photo
             locationSwitch.setOn(task.locationEnabled, animated: true)
@@ -116,8 +115,8 @@ class TaskViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             let title = titleInput.text!
                    
             //let local = currentUserLocation
-            //let photo = imageView.image
-            task = ToDo(title: title, state: false, updateDate: Date(), locationEnabled: locationSwitch.isOn, local:tempLocation)
+            let photo = imagImageView.image
+            task = ToDo(title: title, state: false, updateDate: Date(), locationEnabled: locationSwitch.isOn, local:tempLocation, photo:photo)
         }
     }
 }
