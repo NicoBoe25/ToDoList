@@ -48,15 +48,27 @@ class TaskViewController: UIViewController {
     }
     
     
+    
 
-    /*
+    
+
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        if saveButton.isEnabled {
+                   let title = titleInput.text!
+                   
+                   //let local = currentUserLocation
+                   
+                   //let photo = imageView.image
+                   
+            task = ToDo(title: title, state: false, updateDate: Date()/*, local: local ?? CLLocation(latitude: 47.6, longitude: 6.8), photo: photo*/ )
+               }
     }
-    */
+    
 
 }

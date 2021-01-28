@@ -155,7 +155,11 @@
                                                 <action selector="dismissDetail:" destination="ZBn-lg-EHb" id="iJx-ob-G1I"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Save" id="Kry-IR-dkd"/>
+                                        <barButtonItem key="rightBarButtonItem" title="Save" id="Kry-IR-dkd">
+                                            <connections>
+                                                <segue destination="ZXx-fI-0IY" kind="unwind" unwindAction="unwindToNoteTableViewWithSegue:" id="h1d-C3-vdU"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -183,6 +187,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o3X-OV-IGa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="ZXx-fI-0IY" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2392.753623188406" y="-28.125"/>
         </scene>
