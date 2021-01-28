@@ -26,7 +26,9 @@ class TaskViewController: UIViewController {
 
         if let task = task{
             titleInput.text = task.title
-//            dateLabel.text = task.lastDate
+            let formatter3 = DateFormatter()
+            formatter3.dateFormat = "dd/MM/yyyy, H:m"
+            dateLabel.text = formatter3.string(from: task.updateDate!)
             imagImageView.image=task.photo
         }
         // Do any additional setup after loading the view.
