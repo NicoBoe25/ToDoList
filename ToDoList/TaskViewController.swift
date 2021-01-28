@@ -17,12 +17,12 @@ class TaskViewController: UIViewController {
     @IBOutlet weak var imagImageView: UIImageView!
     @IBOutlet weak var locationSwitch: UISwitch!
     
-    @IBOutlet weak var CancelButton: UIBarButtonItem!
-    @IBOutlet weak var SaveButton: UIBarButtonItem!
+    @IBOutlet weak var cancelButton: UIBarButtonItem!
+    @IBOutlet weak var saveButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        saveButton.isEnabled = false
 
         if let task = task{
             titleInput.text = task.title
@@ -33,6 +33,19 @@ class TaskViewController: UIViewController {
         }
         // Do any additional setup after loading the view.
     }
+    func updateSaveButtonState(){
+            let title = titleInput.text ?? ""
+            saveButton.isEnabled = !title.isEmpty
+        }
+
+        @IBAction func textEditingChanged(_ sender: UITextField) {
+            updateSaveButtonState()
+        }
+    
+    @IBAction func dismissDetail(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     
 
     /*
