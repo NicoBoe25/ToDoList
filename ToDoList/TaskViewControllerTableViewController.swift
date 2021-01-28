@@ -19,7 +19,7 @@ class TaskViewControllerTableViewController: UITableViewController, UITextFieldD
     @IBAction func dismissKeyboard(_ sender: Any) {
         if newTaskTextField.hasText {
             let newNameTask = newTaskTextField.text!
-            tabTask.append(ToDo(title: newNameTask, state: false, updateDate: nil))
+            tabTask.append(ToDo(title: newNameTask, state: false, updateDate: nil, photo: nil))
             todoTableView.reloadData();
         }else{
             let alert = UIAlertController(title: "ToDo", message: "Task is empty", preferredStyle: .alert)
