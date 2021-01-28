@@ -30,6 +30,7 @@ class TaskViewController: UIViewController {
             formatter3.dateFormat = "dd/MM/yyyy, H:m"
             dateLabel.text = formatter3.string(from: task.updateDate!)
             imagImageView.image=task.photo
+            locationSwitch.setOn(task.locationEnabled, animated: true)
         }
         // Do any additional setup after loading the view.
     }
