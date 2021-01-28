@@ -149,7 +149,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <action selector="textEditingChanged:" destination="ZBn-lg-EHb" eventType="editingDidEnd" id="IQw-0V-i80"/>
+                                    <action selector="textEditingChanged:" destination="ZBn-lg-EHb" eventType="editingChanged" id="IBU-QV-rFw"/>
                                 </connections>
                             </textField>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Wz-S5-O3x">

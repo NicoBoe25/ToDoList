@@ -22,7 +22,7 @@ class TaskViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        saveButton.isEnabled = false
 
         if let task = task{
             titleInput.text = task.title
