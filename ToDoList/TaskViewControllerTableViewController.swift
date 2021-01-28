@@ -113,7 +113,17 @@ class TaskViewControllerTableViewController: UITableViewController, UITextFieldD
         return true
     }
     */
-
+    @IBAction func unwindToNoteTableView(segue: UIStoryboardSegue) {
+             //KarenUnwind == Save
+                 let sourceViewController = segue.source as! TaskViewController
+                 if let todo = sourceViewController.task {
+                     if let selectedIndexPath = tableView.indexPathForSelectedRow {
+                         tabTask[selectedIndexPath.row] = todo
+                         tableView.reloadRows(at: [selectedIndexPath], with: .fade)
+                     }
+                 }
+         }
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
